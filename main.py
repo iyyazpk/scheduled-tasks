@@ -26,7 +26,7 @@ if today in birthday_dict:
         mailhub.login(user=MY_EMAIL, password=MY_PASSWORD)
         mailhub.sendmail(from_addr=MY_EMAIL,
                          to_addrs=MY_EMAIL,
-                         msg=f"From: {my_email}\nSubject: Birthday Wish\n\n{contents}")
+                         msg=f"From: {MY_EMAIL}\nSubject: Birthday Wish\n\n{contents}")
 
 
 # 1. Update the birthdays.csv with your friends & family's details.
