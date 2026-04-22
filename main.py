@@ -7,6 +7,9 @@ import os
 now = dt.datetime.now()
 today = (now.month, now.day)
 
+MY_EMAIL = os.environ.get("MY_EMAIL")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
+
 data = pd.read_csv("birthdays.csv")
 # datat_dict = {("month", "day"):value['month', 'day'] for key,value in data.iterrows()}
 birthday_dict = {(data_row["month"], data_row["day"]): data_row for index,data_row in data.iterrows()}
@@ -20,9 +23,9 @@ if today in birthday_dict:
 
     with smtplib.SMTP("smtp.mail.yahoo.com") as mailhub:
         mailhub.starttls()
-        mailhub.login(user=my_email, password=passwd)
-        mailhub.sendmail(from_addr=my_email,
-                         to_addrs=my_email,
+        mailhub.login(user=MY_EMAIL, password=MY_PASSWORD)
+        mailhub.sendmail(from_addr=MY_EMAIL,
+                         to_addrs=MY_EMAIL,
                          msg=f"From: {my_email}\nSubject: Birthday Wish\n\n{contents}")
 
 
