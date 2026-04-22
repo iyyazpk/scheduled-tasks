@@ -7,9 +7,6 @@ import os
 now = dt.datetime.now()
 today = (now.month, now.day)
 
-my_email = "ahmedaz620@yahoo.com"
-passwd = "abadjnptgszkhniq"
-
 data = pd.read_csv("birthdays.csv")
 # datat_dict = {("month", "day"):value['month', 'day'] for key,value in data.iterrows()}
 birthday_dict = {(data_row["month"], data_row["day"]): data_row for index,data_row in data.iterrows()}
