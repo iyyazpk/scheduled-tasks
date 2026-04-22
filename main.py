@@ -3,6 +3,7 @@ import datetime as dt
 import random
 import smtplib
 import pandas as pd
+import os
 now = dt.datetime.now()
 today = (now.month, now.day)
 
